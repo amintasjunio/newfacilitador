@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 <style>
-/* ===== RESET E BASE ===== */
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow:hidden}
 body{
@@ -69,7 +68,7 @@ body{
 .theme-toggle:hover{background:#eef2f6}
 [data-theme="dark"] .theme-toggle:hover{background:#2d3a4f}
 
-/* ===== GRID DE 3 COLUNAS ===== */
+/* ===== GRID 3 COLUNAS ===== */
 .main-grid{
   flex:1;overflow:hidden;
   display:grid;
@@ -92,20 +91,12 @@ body{
   font-size:16px;font-weight:600;letter-spacing:-.2px;
   display:flex;align-items:center;gap:6px;
 }
-.col-header h2::before{content:""}
-.col-header .header-icon{
-  font-size:18px;line-height:1;
-}
 .col-atendimento .col-header h2::before{content:"📋"}
-.col-atendimento .col-header h2{
-  display:flex;align-items:center;
-}
 .col-atalhos .col-header h2::before{content:"⚡"}
 .col-mensagens .col-header h2::before{content:"💬"}
 
 .col-body{
-  flex:1;overflow-y:auto;padding-right:4px;margin-right:-4px;
-  min-height:0;
+  flex:1;overflow-y:auto;padding-right:4px;margin-right:-4px;min-height:0;
 }
 .col-body::-webkit-scrollbar{width:6px}
 .col-body::-webkit-scrollbar-track{background:transparent}
@@ -123,9 +114,8 @@ body{
 .icon-btn:hover{background:#e3eaf3}
 [data-theme="dark"] .icon-btn:hover{background:#2a3750}
 #editModeToggle.active{background:#1a4cff;color:#fff;border-color:#1a4cff}
-#editModeToggle.active:hover{background:#0e3fd6}
 
-/* ===== FORMULÁRIO ===== */
+/* ===== FORM ===== */
 label{
   display:block;font-weight:500;font-size:13px;
   margin-top:14px;margin-bottom:5px;color:#1f3349;
@@ -207,15 +197,6 @@ textarea{min-height:60px}
 .vazio-msg{font-size:12px;color:#798ea5;padding:8px 0 4px}
 [data-theme="dark"] .vazio-msg{color:#8fa3be}
 
-#ioFeedback{
-  font-size:12px;margin-top:6px;display:none;
-  padding:4px 12px;border-radius:40px;
-}
-#ioFeedback.ok{background:#e6f7ec;color:#0a6b34;display:block}
-#ioFeedback.erro{background:#fee9e7;color:#b91c1c;display:block}
-[data-theme="dark"] #ioFeedback.ok{background:#1a3a2a;color:#7be0a0}
-[data-theme="dark"] #ioFeedback.erro{background:#3a1f1f;color:#f7a8a8}
-
 /* ===== MENSAGENS ===== */
 .variaveis-bar{
   background:#f8fafc;border-radius:12px;padding:10px 12px;
@@ -272,7 +253,7 @@ textarea{min-height:60px}
 }
 [data-theme="dark"] .msg-card .card-acoes{border-top-color:#2d3a4f}
 
-/* ===== POPUPS E MODAIS ===== */
+/* ===== POPUPS / MODAIS ===== */
 .popup-overlay,.modal-overlay,.edit-popup-overlay,.view-modal-overlay{
   display:none;position:fixed;inset:0;
   background:rgba(10,20,40,.5);backdrop-filter:blur(5px);
@@ -281,7 +262,6 @@ textarea{min-height:60px}
 }
 .popup-overlay.ativo,.modal-overlay.ativo,
 .edit-popup-overlay.ativo,.view-modal-overlay.ativo{display:flex}
-
 .popup-card,.modal-card,.edit-popup-card,.view-modal-card{
   background:#fff;width:100%;border-radius:24px;
   box-shadow:0 30px 60px rgba(0,0,0,.3);
@@ -292,12 +272,10 @@ textarea{min-height:60px}
 [data-theme="dark"] .edit-popup-card,
 [data-theme="dark"] .view-modal-card{background:#1e293b;color:#e6edf5}
 @keyframes popIn{0%{opacity:0;transform:scale(.96) translateY(8px)}100%{opacity:1;transform:scale(1) translateY(0)}}
-
 .popup-card{max-width:720px;padding:26px 28px 20px}
 .modal-card{max-width:460px;padding:22px 24px 18px}
 .edit-popup-card{max-width:460px;padding:22px 24px 18px}
 .view-modal-card{max-width:520px;padding:22px 26px 18px}
-
 .popup-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
 .popup-header h2{font-size:18px}
 .popup-header button{
@@ -307,7 +285,6 @@ textarea{min-height:60px}
 [data-theme="dark"] .popup-header button{color:#9ab0cc}
 .popup-header button:hover{background:#eef3f9}
 [data-theme="dark"] .popup-header button:hover{background:#2d3a4f}
-
 #popupTexto{
   width:100%;min-height:180px;padding:14px 16px;
   border-radius:16px;border:1.5px solid #e2e8f0;font-size:13px;
@@ -321,7 +298,6 @@ textarea{min-height:60px}
   flex:1 1 auto;border:none;cursor:pointer;font-weight:600;font-family:inherit;
 }
 #copiarPopupBtn{background:#16a34a;color:#fff}
-#copiarPopupBtn:hover{background:#0f8a3b}
 #fecharPopupBtn{background:#eef2f6;color:#1f3349}
 [data-theme="dark"] #fecharPopupBtn{background:#2d3a4f;color:#d6e0ee}
 #copiadoPopupMsg{color:#16a34a;font-weight:500;font-size:13px;display:none}
@@ -373,12 +349,9 @@ textarea{min-height:60px}
   min-width:80px;border:none;cursor:pointer;font-weight:600;font-family:inherit;
 }
 #salvarEditBtn{background:#1a4cff;color:#fff}
-#salvarEditBtn:hover{background:#0e3fd6}
 #excluirEditBtn{background:#e74c3c;color:#fff}
-#excluirEditBtn:hover{background:#c0392b}
 #cancelarEditBtn{background:#eef2f6;color:#1f3349}
 [data-theme="dark"] #cancelarEditBtn{background:#2d3a4f;color:#d6e0ee}
-
 .view-subtitle{
   font-size:11px;color:#64748b;margin-bottom:12px;
   border-bottom:1px solid #eef2f8;padding-bottom:8px;
@@ -391,19 +364,18 @@ textarea{min-height:60px}
   border:1px solid #eef2f8;min-height:80px;
 }
 [data-theme="dark"] .view-body{background:#0f1729;border-color:#2d3a4f;color:#e6edf5}
-.view-feedback{
-  font-size:12px;color:#16a34a;display:none;align-items:center;gap:4px;
-}
+.view-feedback{font-size:12px;color:#16a34a;display:none;align-items:center;gap:4px}
 .view-feedback.ativo{display:inline-flex}
 
 /* ===== TOAST ===== */
 .toast-feedback{
   position:fixed;bottom:100px;left:50%;
   transform:translateX(-50%) translateY(20px);
-  background:#1a4cff;color:#fff;padding:10px 22px;
+  background:#1a4cff;color:#fff;padding:12px 22px;
   border-radius:12px;font-size:13px;font-weight:500;
   z-index:3000;opacity:0;pointer-events:none;
   transition:.3s ease;box-shadow:0 8px 24px rgba(26,76,255,.3);
+  max-width:90vw;text-align:center;
 }
 .toast-feedback.ativo{opacity:1;transform:translateX(-50%) translateY(0)}
 .toast-feedback.erro{background:#dc2626;box-shadow:0 8px 24px rgba(220,38,38,.3)}
@@ -413,10 +385,9 @@ textarea{min-height:60px}
   position:fixed;min-width:200px;min-height:120px;width:340px;height:280px;
   background:#fff;border-radius:20px;padding:16px 18px 14px;
   box-shadow:0 12px 48px rgba(0,20,40,.2);z-index:500;
-  transition:background .25s,box-shadow .2s;
-  border:1.5px solid rgba(255,255,255,.2);backdrop-filter:blur(2px);
-  cursor:default;user-select:none;resize:both;overflow:hidden;
-  touch-action:none;display:flex;flex-direction:column;
+  transition:background .25s;border:1.5px solid rgba(255,255,255,.2);
+  backdrop-filter:blur(2px);cursor:default;user-select:none;resize:both;
+  overflow:hidden;touch-action:none;display:flex;flex-direction:column;
 }
 [data-theme="dark"] .sticky-note-float{
   background:#1e293b;box-shadow:0 12px 48px rgba(0,0,0,.6);border-color:#3b4a62;
@@ -431,7 +402,6 @@ textarea{min-height:60px}
 .sticky-note-float.minimizado::after{display:none}
 .sticky-note-float.minimizado .sticky-body{display:none}
 .sticky-note-float.minimizado .minimizar-btn{transform:rotate(180deg)}
-
 .sticky-header{
   display:flex;align-items:center;justify-content:space-between;
   gap:8px;margin-bottom:10px;cursor:grab;touch-action:none;
@@ -449,18 +419,17 @@ textarea{min-height:60px}
   background:transparent;border:none;font-size:13px;color:#798ea5;
   cursor:pointer;padding:4px 6px;border-radius:20px;transition:.15s;
   line-height:1;display:flex;align-items:center;justify-content:center;
-  width:26px;height:26px;user-select:none;
+  width:26px;height:26px;
 }
 .sticky-actions button:hover{background:#eef2f6;color:#1f3349}
 [data-theme="dark"] .sticky-actions button:hover{background:#2d3a4f;color:#d6e0ee}
 .sticky-actions .minimizar-btn{transition:transform .3s ease}
-
 .sticky-body{flex:1;display:flex;flex-direction:column;min-height:0;position:relative}
 .sticky-body textarea{
   flex:1;width:100%;padding:10px 14px;border:1.5px solid #e2e8f0;
   border-radius:14px;font-size:12px;font-family:inherit;
-  background:#fafff7;resize:none;transition:.15s;color:#0b1a2e;
-  cursor:text;user-select:text;min-height:40px;height:100%;box-sizing:border-box;
+  background:#fafff7;resize:none;color:#0b1a2e;min-height:40px;
+  height:100%;box-sizing:border-box;
 }
 [data-theme="dark"] .sticky-body textarea{background:#0f1729;border-color:#3b4a62;color:#e6edf5}
 .sticky-body textarea:focus{
@@ -469,8 +438,7 @@ textarea{min-height:60px}
 }
 .sticky-status{
   font-size:10px;color:#8fa3be;margin-top:4px;text-align:right;
-  opacity:.7;transition:opacity .3s;user-select:none;
-  flex-shrink:0;padding-right:20px;
+  opacity:.7;flex-shrink:0;padding-right:20px;
 }
 
 /* ===== CALCULADORA ===== */
@@ -479,13 +447,11 @@ textarea{min-height:60px}
   border-radius:50%;background:linear-gradient(135deg,#1a4cff,#2d7aff);
   color:#fff;border:none;font-size:22px;cursor:pointer;
   box-shadow:0 4px 20px rgba(26,76,255,.35);
-  transition:transform .2s,box-shadow .2s;z-index:600;
+  transition:transform .2s;z-index:600;
   display:flex;align-items:center;justify-content:center;
 }
-.calc-toggle-btn:hover{transform:scale(1.08);box-shadow:0 6px 30px rgba(26,76,255,.45)}
+.calc-toggle-btn:hover{transform:scale(1.08)}
 .calc-toggle-btn.active{background:#e74c3c;transform:rotate(45deg)}
-.calc-toggle-btn.active:hover{transform:rotate(45deg) scale(1.08)}
-
 .calc-panel{
   position:fixed;bottom:92px;right:24px;width:300px;
   background:#fff;border-radius:18px;padding:18px 20px 18px;
@@ -508,13 +474,13 @@ textarea{min-height:60px}
 .calc-row input[type="time"]{
   flex:1;padding:6px 8px;border:1.5px solid #e2e8f0;border-radius:8px;
   font-size:13px;font-family:"Inter",monospace;background:#fafcff;
-  transition:.15s;min-width:0;color:inherit;
+  min-width:0;color:inherit;
 }
 [data-theme="dark"] .calc-row input[type="time"]{background:#0f1729;border-color:#3b4a62;color:#e6edf5}
 .calc-row input[type="number"]{
   width:44px;padding:6px 2px;border:1.5px solid #e2e8f0;border-radius:8px;
   font-size:13px;text-align:center;font-family:"Inter",monospace;
-  background:#fafcff;transition:.15s;color:inherit;
+  background:#fafcff;color:inherit;
 }
 [data-theme="dark"] .calc-row input[type="number"]{background:#0f1729;border-color:#3b4a62;color:#e6edf5}
 .calc-row span{font-size:12px;color:#52677a;font-weight:500}
@@ -534,10 +500,9 @@ textarea{min-height:60px}
 .calc-actions{display:flex;gap:6px;margin-top:10px}
 .calc-actions button{
   flex:1;padding:7px 10px;font-size:12px;border-radius:40px;
-  font-weight:600;border:none;cursor:pointer;transition:.2s;font-family:inherit;
+  font-weight:600;border:none;cursor:pointer;font-family:inherit;
 }
 .calc-calcular-btn{background:#1a4cff;color:#fff}
-.calc-calcular-btn:hover{background:#0e3fd6}
 .calc-limpar-btn{background:#eef2f6;color:#1f3349}
 [data-theme="dark"] .calc-limpar-btn{background:#2d3a4f;color:#d6e0ee}
 
@@ -547,11 +512,10 @@ textarea{min-height:60px}
   border-radius:50%;background:#3d6bff;color:#fff;border:none;
   font-size:20px;display:flex;align-items:center;justify-content:center;
   cursor:pointer;box-shadow:0 4px 14px rgba(26,76,255,.28);
-  z-index:1500;transition:transform .15s,box-shadow .15s;
+  z-index:1500;transition:transform .15s;
 }
-.cronometro-fab:hover{transform:scale(1.06);box-shadow:0 6px 18px rgba(26,76,255,.38)}
+.cronometro-fab:hover{transform:scale(1.06)}
 .cronometro-fab:active{transform:scale(.94)}
-
 .cronometros-container{
   position:fixed;bottom:86px;right:24px;
   display:flex;flex-direction:column-reverse;gap:6px;
@@ -564,20 +528,17 @@ textarea{min-height:60px}
   width:auto;max-width:190px;
   box-shadow:0 4px 14px rgba(0,20,40,.1);
   border:1px solid rgba(11,26,46,.08);
-  transition:box-shadow .3s,border-color .3s;
   display:flex;align-items:center;gap:8px;
 }
 [data-theme="dark"] .cronometro-card{
   background:rgba(30,41,59,.92);border-color:rgba(255,255,255,.08);
-  box-shadow:0 4px 14px rgba(0,0,0,.3);
 }
 .cronometro-card.cronometro-pausado{opacity:.6}
 .cronometro-card.cronometro-notificado{
   border-color:#1a4cff;
-  box-shadow:0 0 0 2px rgba(26,76,255,.3),0 4px 14px rgba(0,20,40,.1);
+  box-shadow:0 0 0 2px rgba(26,76,255,.3);
 }
 .cronometro-card-main{display:flex;flex-direction:column;min-width:0;flex:1}
-.cronometro-card-header{display:flex;align-items:center;gap:4px}
 .cronometro-nome{
   font-size:10.5px;font-weight:600;color:#52677a;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100px;
@@ -585,20 +546,19 @@ textarea{min-height:60px}
 [data-theme="dark"] .cronometro-nome{color:#93a6bd}
 .cronometro-tempo{
   font-size:15px;font-weight:700;font-variant-numeric:tabular-nums;
-  letter-spacing:.2px;color:#0b1a2e;line-height:1.2;
+  color:#0b1a2e;line-height:1.2;
 }
 [data-theme="dark"] .cronometro-tempo{color:#e6edf5}
 .cronometro-acoes{display:flex;align-items:center;gap:2px;flex-shrink:0}
 .cronometro-pausar,.cronometro-fechar{
   background:transparent;border:none;color:#8fa3be;font-size:13px;
-  cursor:pointer;line-height:1;padding:5px;border-radius:8px;
-  flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;padding:5px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
 }
 .cronometro-pausar:hover{background:#eef2f6;color:#1f3349}
 .cronometro-fechar:hover{background:#eef2f6;color:#d64545}
 [data-theme="dark"] .cronometro-pausar:hover,
 [data-theme="dark"] .cronometro-fechar:hover{background:#2d3a4f;color:#d6e0ee}
-
 .cronometro-popup-overlay{
   display:none;position:fixed;inset:0;background:rgba(11,26,46,.45);
   align-items:center;justify-content:center;z-index:2000;
@@ -606,7 +566,7 @@ textarea{min-height:60px}
 .cronometro-popup-overlay.ativo{display:flex}
 .cronometro-popup-card{
   background:#fff;border-radius:20px;padding:22px 22px 18px;
-  width:310px;max-width:90vw;box-shadow:0 16px 40px rgba(0,20,40,.25);
+  width:310px;max-width:90vw;
 }
 [data-theme="dark"] .cronometro-popup-card{background:#1e293b}
 .cronometro-popup-card h3{font-size:16px;margin-bottom:14px;color:#0b1a2e}
@@ -633,7 +593,7 @@ textarea{min-height:60px}
 .cronometro-config-row input[type="number"]{
   width:56px;padding:6px 4px;border:1.5px solid #e2e8f0;border-radius:8px;
   font-size:13px;text-align:center;font-family:"Inter",monospace;
-  background:#fafcff;transition:.15s;color:inherit;
+  background:#fafcff;color:inherit;
 }
 [data-theme="dark"] .cronometro-config-row input[type="number"]{
   background:#0f1729;border-color:#3b4a62;color:#e6edf5;
@@ -649,12 +609,10 @@ textarea{min-height:60px}
   font-weight:600;cursor:pointer;font-family:inherit;
 }
 #cronometroIniciarBtn{background:#1a4cff;color:#fff;border:none}
-#cronometroIniciarBtn:hover{background:#0e3fd6}
 #cronometroCancelarBtn{
   background:transparent;border:1px solid #dce4ed;color:#1f3349;
 }
 [data-theme="dark"] #cronometroCancelarBtn{border-color:#3b4a62;color:#b8c9e0}
-
 .cronometro-toast{
   position:fixed;top:70px;left:50%;
   transform:translateX(-50%) translateY(-20px);
@@ -685,24 +643,18 @@ textarea{min-height:60px}
 </head>
 <body>
 
-<!-- ===== TOP BAR ===== -->
 <div class="top-bar">
   <div class="logo"><i class="fas fa-user-check"></i> Facilitador</div>
   <div class="spacer"></div>
-  <button class="btn btn-outline" id="btnExportarTudo" title="Exportar tudo (pacote unificado)">
-    <i class="fas fa-download"></i> Exportar tudo
-  </button>
-  <button class="btn btn-outline" id="btnImportarTudo" title="Importar (aceita atalhos, mensagens ou pacote unificado)">
-    <i class="fas fa-upload"></i> Importar
-  </button>
-  <input type="file" id="importarInputTudo" accept=".json" style="display:none" />
+  <button class="btn btn-outline" id="btnExportarTudo"><i class="fas fa-download"></i> Exportar tudo</button>
+  <button class="btn btn-outline" id="btnImportarTudo"><i class="fas fa-upload"></i> Importar</button>
+  <input type="file" id="importarInputTudo" accept=".json,application/json" style="display:none" />
   <button class="theme-toggle" id="themeToggle">🌓</button>
 </div>
 
-<!-- ===== GRID 3 COLUNAS ===== -->
 <div class="main-grid">
 
-  <!-- ============ COLUNA 1: ATENDIMENTO ============ -->
+  <!-- COLUNA 1 -->
   <div class="col col-atendimento">
     <div class="col-header">
       <h2>Gerador de Atendimento</h2>
@@ -712,61 +664,51 @@ textarea{min-height:60px}
       <form id="form" onsubmit="return false;">
         <label for="solicitacao">Solicitação ou problema</label>
         <input type="text" id="solicitacao" placeholder="Ex: Dúvidas operacionais" />
-
         <label for="solucao">Solução</label>
         <textarea id="solucao" placeholder="Descreva a solução aplicada..."></textarea>
-
         <label>Tem haver com os últimos 3 chamados?</label>
         <div class="radio-group">
           <label><input type="radio" name="chamados" value="Sim" /> Sim</label>
           <label><input type="radio" name="chamados" value="Não" checked /> Não</label>
         </div>
-
         <label>Existiu ou foi necessário kanban?</label>
         <div class="radio-group">
-          <label><input type="radio" name="kanban" value="Sim" onchange="mostrarKanban()" /> Sim</label>
-          <label><input type="radio" name="kanban" value="Não" onchange="mostrarKanban()" checked /> Não</label>
+          <label><input type="radio" name="kanban" value="Sim" /> Sim</label>
+          <label><input type="radio" name="kanban" value="Não" checked /> Não</label>
         </div>
-
         <div id="kanbanFields" class="conditional-fields">
           <label for="kanbanMotivo">Por que foi necessário o Kanban?</label>
           <textarea id="kanbanMotivo" placeholder="Explique o motivo..."></textarea>
         </div>
-
         <label>Efetuou ligação?</label>
         <div class="radio-group">
-          <label><input type="radio" name="ligacao" value="Sim" onchange="mostrarLigacao()" /> Sim</label>
-          <label><input type="radio" name="ligacao" value="Não" onchange="mostrarLigacao()" checked /> Não</label>
+          <label><input type="radio" name="ligacao" value="Sim" /> Sim</label>
+          <label><input type="radio" name="ligacao" value="Não" checked /> Não</label>
         </div>
-
         <div id="ligacaoFields" class="conditional-fields">
           <label for="ligacaoMotivo">Por que foi necessário efetuar ligação?</label>
           <textarea id="ligacaoMotivo" placeholder="Explique o motivo..."></textarea>
         </div>
-
         <label>Foi realizado atualização?</label>
         <div class="radio-group">
           <label><input type="radio" name="atualizacao" value="Sim" /> Sim</label>
           <label><input type="radio" name="atualizacao" value="Não" checked /> Não</label>
         </div>
-
         <div class="versao-fields" id="versaoFields">
           <div><label for="versaoDe">Versão de</label><input type="text" id="versaoDe" placeholder="Ex: 4295" /></div>
           <div><label for="versaoPara">Para</label><input type="text" id="versaoPara" placeholder="Ex: 4659" /></div>
         </div>
-
         <label>Cliente vinculado?</label>
         <div class="radio-group">
           <label><input type="radio" name="vinculado" value="Sim" checked /> Sim</label>
           <label><input type="radio" name="vinculado" value="Não" /> Não</label>
         </div>
-
         <button type="button" id="gerarBtn">✨ Gerar texto</button>
       </form>
     </div>
   </div>
 
-  <!-- ============ COLUNA 2: ATALHOS ============ -->
+  <!-- COLUNA 2 -->
   <div class="col col-atalhos">
     <div class="col-header">
       <h2>Atalhos rápidos</h2>
@@ -775,17 +717,16 @@ textarea{min-height:60px}
         <button class="icon-btn" id="editModeToggle" title="Modo edição">✎</button>
         <button class="icon-btn" id="exportarAtalhosBtn" title="Exportar só atalhos">⬇</button>
         <button class="icon-btn" id="importarAtalhosBtn" title="Importar só atalhos">⬆</button>
-        <input type="file" id="importarAtalhosInput" accept=".json" style="display:none" />
+        <input type="file" id="importarAtalhosInput" accept=".json,application/json" style="display:none" />
       </div>
     </div>
     <div class="col-body">
       <div id="listaAtalhos" class="atalho-grid"></div>
       <div id="vazioMsgAtalhos" class="vazio-msg">Nenhum atalho cadastrado.</div>
-      <div id="ioFeedback"></div>
     </div>
   </div>
 
-  <!-- ============ COLUNA 3: MENSAGENS ============ -->
+  <!-- COLUNA 3 -->
   <div class="col col-mensagens">
     <div class="col-header">
       <h2>Mensagens rápidas</h2>
@@ -794,11 +735,10 @@ textarea{min-height:60px}
         <button class="icon-btn" id="exportarMsgsBtn" title="Exportar só mensagens">⬇</button>
         <button class="icon-btn" id="importarMsgsBtn" title="Importar só mensagens">⬆</button>
         <button class="icon-btn" id="btnLimparVariaveis" title="Limpar variáveis">🧹</button>
-        <input type="file" id="importarMsgsInput" accept=".json" style="display:none" />
+        <input type="file" id="importarMsgsInput" accept=".json,application/json" style="display:none" />
       </div>
     </div>
     <div class="col-body">
-      <!-- Variáveis -->
       <div class="variaveis-bar">
         <div class="campo-var cliente">
           <label>👤 Nome</label>
@@ -813,7 +753,6 @@ textarea{min-height:60px}
           <input type="date" id="dataFim" />
         </div>
       </div>
-
       <div class="cards-grid" id="listaMensagens">
         <div class="vazio-msg" id="vazioMsgMensagens" style="grid-column:1 / -1;">
           Nenhuma mensagem. Clique em ➕ para criar.
@@ -824,10 +763,9 @@ textarea{min-height:60px}
 
 </div>
 
-<!-- ===== TOAST ===== -->
 <div class="toast-feedback" id="toastFeedback"></div>
 
-<!-- ===== BLOCO DE NOTAS FLUTUANTE ===== -->
+<!-- BLOCO DE NOTAS -->
 <div class="sticky-note-float" id="stickyNoteFloat" style="right:24px;bottom:24px;">
   <div class="sticky-header" id="stickyHeader">
     <label>Bloco de notas</label>
@@ -842,14 +780,11 @@ textarea{min-height:60px}
   </div>
 </div>
 
-<!-- ===== CALCULADORA ===== -->
+<!-- CALCULADORA -->
 <button class="calc-toggle-btn" id="calcToggleBtn" title="Calculadora de horários">⏰</button>
 <div class="calc-panel" id="calcPanel">
   <h3>Calculadora de Horários</h3>
-  <div class="calc-row">
-    <label>Início</label>
-    <input type="time" id="calcHoraInicial" />
-  </div>
+  <div class="calc-row"><label>Início</label><input type="time" id="calcHoraInicial" /></div>
   <div class="calc-row">
     <label>+</label>
     <input type="number" id="calcHoras" value="1" min="0" max="99" />
@@ -857,10 +792,7 @@ textarea{min-height:60px}
     <input type="number" id="calcMinutos" value="10" min="0" max="59" />
     <span>min</span>
   </div>
-  <div class="calc-row" style="margin-top:4px;">
-    <label>Chegou</label>
-    <input type="time" id="calcChegada" />
-  </div>
+  <div class="calc-row" style="margin-top:4px;"><label>Chegou</label><input type="time" id="calcChegada" /></div>
   <div class="calc-resultado" id="calcResultado">--:--</div>
   <div class="calc-comparacao" id="calcComparacao">Insira um horário inicial</div>
   <div class="calc-actions">
@@ -869,13 +801,13 @@ textarea{min-height:60px}
   </div>
 </div>
 
-<!-- ===== CRONÔMETROS ===== -->
+<!-- CRONÔMETROS -->
 <div id="cronometrosContainer" class="cronometros-container"></div>
 <button id="cronometroFab" class="cronometro-fab" title="Novo cronômetro">⏱</button>
 <div id="cronometroToast" class="cronometro-toast"></div>
-<audio id="cronometroBeepAudio" preload="auto" src="data:audio/wav;base64,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"></audio>
+<audio id="cronometroBeepAudio" preload="auto" src="data:audio/wav;base64,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"></audio>
 
-<!-- ===== POPUP CRONÔMETRO ===== -->
+<!-- POPUP CRONÔMETRO -->
 <div class="cronometro-popup-overlay" id="cronometroPopupOverlay">
   <div class="cronometro-popup-card">
     <h3>⏱ Novo cronômetro</h3>
@@ -894,7 +826,7 @@ textarea{min-height:60px}
   </div>
 </div>
 
-<!-- ===== POPUP RESULTADO ===== -->
+<!-- POPUP RESULTADO -->
 <div class="popup-overlay" id="popupOverlay">
   <div class="popup-card">
     <div class="popup-header">
@@ -910,7 +842,7 @@ textarea{min-height:60px}
   </div>
 </div>
 
-<!-- ===== POPUP EDIÇÃO ATALHO ===== -->
+<!-- POPUP EDIÇÃO ATALHO -->
 <div class="edit-popup-overlay" id="editPopupOverlay">
   <div class="edit-popup-card">
     <h3 id="editPopupTitle">✎ Editar atalho</h3>
@@ -935,7 +867,7 @@ textarea{min-height:60px}
   </div>
 </div>
 
-<!-- ===== MODAL MENSAGEM ===== -->
+<!-- MODAL MENSAGEM -->
 <div class="modal-overlay" id="modalMsg">
   <div class="modal-card">
     <h3 id="modalTitulo"><i class="fas fa-plus-circle"></i> Nova mensagem</h3>
@@ -958,7 +890,7 @@ textarea{min-height:60px}
   </div>
 </div>
 
-<!-- ===== MODAL VISUALIZAÇÃO ===== -->
+<!-- MODAL VISUALIZAÇÃO -->
 <div class="view-modal-overlay" id="viewModal">
   <div class="view-modal-card">
     <h3><i class="fas fa-file-alt"></i> <span id="viewTituloTexto">Mensagem</span></h3>
@@ -976,9 +908,9 @@ textarea{min-height:60px}
 (function(){
 'use strict';
 
-/* ==================================================================
-   1. TEMA
-================================================================== */
+/* ==========================================================
+   TEMA
+========================================================== */
 const html = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
 function toggleTheme(){
@@ -988,20 +920,17 @@ function toggleTheme(){
   localStorage.setItem('facilitador_tema', next);
 }
 themeToggle.addEventListener('click', toggleTheme);
-(function carregarTema(){
+(function(){
   const salvo = localStorage.getItem('facilitador_tema');
   if (salvo){
     html.setAttribute('data-theme', salvo);
     themeToggle.textContent = salvo === 'dark' ? '☀️' : '🌓';
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
-    html.setAttribute('data-theme','dark');
-    themeToggle.textContent = '☀️';
   }
 })();
 
-/* ==================================================================
-   2. UTILITÁRIOS
-================================================================== */
+/* ==========================================================
+   UTILITÁRIOS
+========================================================== */
 function copiarTexto(texto){
   if (navigator.clipboard && navigator.clipboard.writeText){
     return navigator.clipboard.writeText(texto).catch(() => fallbackCopy(texto));
@@ -1023,28 +952,30 @@ function mostrarToast(msg, erro = false){
   toastFeedback.textContent = msg;
   toastFeedback.className = 'toast-feedback ativo' + (erro ? ' erro' : '');
   clearTimeout(toastTimeout);
-  toastTimeout = setTimeout(() => toastFeedback.classList.remove('ativo'), 3200);
+  toastTimeout = setTimeout(() => toastFeedback.classList.remove('ativo'), 3500);
+  console.log('[Toast]', erro ? '❌' : '✅', msg);
 }
 
-/* ==================================================================
-   3. STORAGE KEYS
-================================================================== */
+/* ==========================================================
+   STORAGE KEYS
+========================================================== */
 const KEY_ATALHOS = 'facilitador_atalhos';
 const KEY_MSGS = 'facilitador_mensagens';
 const KEY_CAMPOS = 'facilitador_campos';
 const KEY_STICKY = 'stickyNoteContent';
 
-/* ==================================================================
-   4. ATENDIMENTO — gerador
-================================================================== */
-window.mostrarKanban = function(){
-  const sim = document.querySelector('input[name="kanban"][value="Sim"]').checked;
-  document.getElementById('kanbanFields').classList.toggle('show', sim);
-};
-window.mostrarLigacao = function(){
-  const sim = document.querySelector('input[name="ligacao"][value="Sim"]').checked;
-  document.getElementById('ligacaoFields').classList.toggle('show', sim);
-};
+/* ==========================================================
+   ATENDIMENTO
+========================================================== */
+function atualizarCamposCondicionais(){
+  const kanbanSim = document.querySelector('input[name="kanban"][value="Sim"]').checked;
+  document.getElementById('kanbanFields').classList.toggle('show', kanbanSim);
+  const ligacaoSim = document.querySelector('input[name="ligacao"][value="Sim"]').checked;
+  document.getElementById('ligacaoFields').classList.toggle('show', ligacaoSim);
+}
+document.querySelectorAll('input[name="kanban"], input[name="ligacao"]').forEach(r => {
+  r.addEventListener('change', atualizarCamposCondicionais);
+});
 
 const versaoFields = document.getElementById('versaoFields');
 document.querySelectorAll('input[name="atualizacao"]').forEach(r => {
@@ -1099,7 +1030,6 @@ document.getElementById('gerarBtn').addEventListener('click', () => {
   popupOverlay.classList.add('ativo');
   copiadoPopupMsg.style.display = 'none';
 });
-
 function fecharPopup(){ popupOverlay.classList.remove('ativo'); }
 document.getElementById('fecharPopupBtn').addEventListener('click', fecharPopup);
 document.getElementById('fecharPopupX').addEventListener('click', fecharPopup);
@@ -1110,7 +1040,6 @@ document.getElementById('copiarPopupBtn').addEventListener('click', () => {
     setTimeout(() => copiadoPopupMsg.style.display = 'none', 2000);
   });
 });
-
 document.getElementById('limparTituloBtn').addEventListener('click', () => {
   document.getElementById('solicitacao').value = '';
   document.getElementById('solucao').value = '';
@@ -1131,17 +1060,23 @@ document.getElementById('limparTituloBtn').addEventListener('click', () => {
   setTimeout(() => { btn.textContent = '🧹'; }, 1200);
 });
 
-/* ==================================================================
-   5. ATALHOS
-================================================================== */
+/* ==========================================================
+   ATALHOS
+========================================================== */
 const listaAtalhosEl = document.getElementById('listaAtalhos');
 const vazioMsgAtalhos = document.getElementById('vazioMsgAtalhos');
 let editMode = false;
 
 function carregarAtalhos(){
-  try { return JSON.parse(localStorage.getItem(KEY_ATALHOS)) || []; } catch { return []; }
+  try {
+    const raw = localStorage.getItem(KEY_ATALHOS);
+    return raw ? JSON.parse(raw) : [];
+  } catch { return []; }
 }
-function salvarAtalhos(l){ localStorage.setItem(KEY_ATALHOS, JSON.stringify(l)); }
+function salvarAtalhos(l){
+  localStorage.setItem(KEY_ATALHOS, JSON.stringify(l));
+  console.log('[Storage] atalhos salvos:', l.length);
+}
 
 function renderizarAtalhos(){
   const lista = carregarAtalhos();
@@ -1168,6 +1103,7 @@ function renderizarAtalhos(){
     listaAtalhosEl.appendChild(item);
   });
 }
+
 function executarAtalho(atalho, ev){
   if (atalho.tipo === 'link'){
     window.open(atalho.valor, '_blank');
@@ -1277,9 +1213,9 @@ editModeToggle.addEventListener('click', () => {
   });
 });
 
-/* ==================================================================
-   6. MENSAGENS
-================================================================== */
+/* ==========================================================
+   MENSAGENS
+========================================================== */
 const dataInicio = document.getElementById('dataInicio');
 const dataFim = document.getElementById('dataFim');
 const nomeCliente = document.getElementById('nomeCliente');
@@ -1317,9 +1253,15 @@ function atualizarPreviews(){
 }
 
 function carregarMsgs(){
-  try { return JSON.parse(localStorage.getItem(KEY_MSGS)) || []; } catch { return []; }
+  try {
+    const raw = localStorage.getItem(KEY_MSGS);
+    return raw ? JSON.parse(raw) : [];
+  } catch { return []; }
 }
-function salvarMsgs(l){ localStorage.setItem(KEY_MSGS, JSON.stringify(l)); }
+function salvarMsgs(l){
+  localStorage.setItem(KEY_MSGS, JSON.stringify(l));
+  console.log('[Storage] mensagens salvas:', l.length);
+}
 
 function carregarCampos(){
   try {
@@ -1350,7 +1292,6 @@ function renderizarMensagens(){
   msgs.forEach((item, idx) => {
     const card = document.createElement('div');
     card.className = 'msg-card';
-    card.dataset.index = idx;
     card.addEventListener('click', e => {
       if (e.target.closest('.card-acoes')) return;
       abrirVisualizacao(idx);
@@ -1534,159 +1475,11 @@ document.getElementById('btnLimparVariaveis').addEventListener('click', () => {
   salvarCampos(); atualizarPreviews();
 });
 
-/* ==================================================================
-   7. IMPORT / EXPORT UNIFICADO + AUTO-DETECÇÃO
-================================================================== */
+/* ==========================================================
+   IMPORT / EXPORT (com auto-detecção e diagnóstico)
+========================================================== */
 
-/* --------- Funções auxiliares de importação --------- */
-function importarAtalhosParaBase(arr){
-  const atuais = carregarAtalhos();
-  const ids = new Set(atuais.map(a => a.id));
-  let count = 0;
-  arr.forEach(a => {
-    if (!a || !a.nome || !a.tipo || a.valor === undefined) return;
-    const novo = {
-      id: a.id || Date.now().toString() + Math.random().toString(36).slice(2,6),
-      nome: a.nome,
-      tipo: a.tipo,
-      valor: a.valor
-    };
-    if (ids.has(novo.id)) novo.id = Date.now().toString() + Math.random().toString(36).slice(2,6);
-    atuais.push(novo);
-    ids.add(novo.id);
-    count++;
-  });
-  salvarAtalhos(atuais);
-  renderizarAtalhos();
-  return count;
-}
-function importarMensagensParaBase(arr){
-  const atuais = carregarMsgs();
-  let count = 0;
-  arr.forEach(m => {
-    if (m && m.titulo && m.corpo !== undefined){
-      atuais.push({ titulo: m.titulo, corpo: m.corpo });
-      count++;
-    }
-  });
-  salvarMsgs(atuais);
-  renderizarMensagens();
-  return count;
-}
-
-/* --------- Auto-detecção --------- */
-function detectarTipoArray(arr){
-  if (!Array.isArray(arr) || arr.length === 0) return 'vazio';
-  const p = arr[0];
-  if (p && p.nome && p.tipo && p.valor !== undefined) return 'atalhos';
-  if (p && p.titulo && p.corpo !== undefined) return 'mensagens';
-  return 'desconhecido';
-}
-
-/* --------- Importar TUDO (aceita os 3 formatos) --------- */
-document.getElementById('btnImportarTudo').addEventListener('click', () => {
-  document.getElementById('importarInputTudo').click();
-});
-document.getElementById('importarInputTudo').addEventListener('change', ev => {
-  const arquivo = ev.target.files[0];
-  if (!arquivo) return;
-  const leitor = new FileReader();
-  leitor.onload = e => {
-    try {
-      const dados = JSON.parse(e.target.result);
-      let resumo = [];
-
-      // CASO 1: array puro (formato antigo, solto)
-      if (Array.isArray(dados)){
-        const tipo = detectarTipoArray(dados);
-        if (tipo === 'atalhos'){
-          const n = importarAtalhosParaBase(dados);
-          resumo.push(`${n} atalho(s)`);
-        } else if (tipo === 'mensagens'){
-          const n = importarMensagensParaBase(dados);
-          resumo.push(`${n} mensagem(ns)`);
-        } else if (tipo === 'vazio'){
-          mostrarToast('Arquivo vazio.', true);
-          ev.target.value = '';
-          return;
-        } else {
-          mostrarToast('Formato não reconhecido.', true);
-          ev.target.value = '';
-          return;
-        }
-      }
-      // CASO 2: pacote unificado (formato novo)
-      else if (dados && typeof dados === 'object'){
-        if (Array.isArray(dados.atalhos)){
-          const n = importarAtalhosParaBase(dados.atalhos);
-          resumo.push(`${n} atalho(s)`);
-        }
-        if (Array.isArray(dados.mensagens)){
-          const n = importarMensagensParaBase(dados.mensagens);
-          resumo.push(`${n} mensagem(ns)`);
-        }
-        if (dados.campos){
-          localStorage.setItem(KEY_CAMPOS, JSON.stringify(dados.campos));
-          carregarCampos();
-          atualizarPreviews();
-        }
-        if (typeof dados.sticky === 'string'){
-          localStorage.setItem(KEY_STICKY, dados.sticky);
-          const ta = document.getElementById('stickyNoteText');
-          if (ta) ta.value = dados.sticky;
-        }
-        if (dados.tema){
-          html.setAttribute('data-theme', dados.tema);
-          themeToggle.textContent = dados.tema === 'dark' ? '☀️' : '🌓';
-          localStorage.setItem('facilitador_tema', dados.tema);
-        }
-      } else {
-        mostrarToast('Formato não reconhecido.', true);
-        ev.target.value = '';
-        return;
-      }
-
-      mostrarToast(resumo.length ? `Importado: ${resumo.join(', ')}` : 'Backup importado!');
-    } catch(err){
-      console.error(err);
-      mostrarToast('Erro: arquivo inválido.', true);
-    }
-    ev.target.value = '';
-  };
-  leitor.readAsText(arquivo);
-});
-
-/* --------- Exportar TUDO (pacote unificado) --------- */
-document.getElementById('btnExportarTudo').addEventListener('click', () => {
-  const pacote = {
-    versao: '3.0',
-    exportadoEm: new Date().toISOString(),
-    atalhos: carregarAtalhos(),
-    mensagens: carregarMsgs(),
-    campos: JSON.parse(localStorage.getItem(KEY_CAMPOS) || '{}'),
-    sticky: localStorage.getItem(KEY_STICKY) || '',
-    tema: localStorage.getItem('facilitador_tema') || 'light'
-  };
-  baixarJSON(pacote, `facilitador_tudo_${new Date().toISOString().slice(0,10)}.json`);
-  mostrarToast('Pacote completo exportado!');
-});
-
-/* --------- Exportar só atalhos (formato antigo — array puro) --------- */
-document.getElementById('exportarAtalhosBtn').addEventListener('click', () => {
-  const lista = carregarAtalhos();
-  if (lista.length === 0){ mostrarToast('Nenhum atalho para exportar.', true); return; }
-  baixarJSON(lista, `atalhos_${new Date().toISOString().slice(0,10)}.json`);
-  mostrarToast(`${lista.length} atalho(s) exportado(s)!`);
-});
-
-/* --------- Exportar só mensagens (formato antigo — array puro) --------- */
-document.getElementById('exportarMsgsBtn').addEventListener('click', () => {
-  const lista = carregarMsgs();
-  if (lista.length === 0){ mostrarToast('Nenhuma mensagem para exportar.', true); return; }
-  baixarJSON(lista, `mensagens_${new Date().toISOString().slice(0,10)}.json`);
-  mostrarToast(`${lista.length} mensagem(ns) exportada(s)!`);
-});
-
+/* ---------- Download de JSON ---------- */
 function baixarJSON(obj, nomeArquivo){
   const blob = new Blob([JSON.stringify(obj, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
@@ -1699,59 +1492,215 @@ function baixarJSON(obj, nomeArquivo){
   URL.revokeObjectURL(url);
 }
 
-/* --------- Importar só atalhos --------- */
-document.getElementById('importarAtalhosBtn').addEventListener('click', () => {
-  document.getElementById('importarAtalhosInput').click();
-});
-document.getElementById('importarAtalhosInput').addEventListener('change', ev => {
-  const arquivo = ev.target.files[0];
-  if (!arquivo) return;
-  const leitor = new FileReader();
-  leitor.onload = e => {
-    try {
-      const dados = JSON.parse(e.target.result);
-      let arr = null;
-      if (Array.isArray(dados)) arr = dados;
-      else if (Array.isArray(dados.atalhos)) arr = dados.atalhos;
-      if (!arr) throw new Error('formato');
-      const n = importarAtalhosParaBase(arr);
-      mostrarToast(`${n} atalho(s) importado(s)!`);
-    } catch(err){
-      mostrarToast('Erro: arquivo inválido.', true);
+/* ---------- Importação de atalhos ---------- */
+function importarAtalhosParaBase(arr){
+  console.log('[Import] Processando', arr.length, 'atalhos candidatos');
+  const atuais = carregarAtalhos();
+  const idsExistentes = new Set(atuais.map(a => String(a.id)));
+  let count = 0;
+  let ignorados = 0;
+
+  arr.forEach((a, i) => {
+    // Validação flexível
+    if (!a || typeof a !== 'object'){ ignorados++; return; }
+    if (!a.nome || typeof a.nome !== 'string'){ ignorados++; console.warn('[Import] atalho', i, 'sem nome:', a); return; }
+    const tipo = (a.tipo === 'link' || a.tipo === 'texto') ? a.tipo : 'texto';
+    const valor = (a.valor !== undefined && a.valor !== null) ? String(a.valor) : '';
+
+    let id = a.id ? String(a.id) : null;
+    if (!id || idsExistentes.has(id)){
+      id = Date.now().toString() + Math.random().toString(36).slice(2, 6);
     }
-    ev.target.value = '';
+    atuais.push({ id, nome: a.nome, tipo, valor });
+    idsExistentes.add(id);
+    count++;
+  });
+
+  salvarAtalhos(atuais);
+  renderizarAtalhos();
+  console.log('[Import] Atalhos importados:', count, '| Ignorados:', ignorados);
+  return { count, ignorados };
+}
+
+/* ---------- Importação de mensagens ---------- */
+function importarMensagensParaBase(arr){
+  console.log('[Import] Processando', arr.length, 'mensagens candidatas');
+  const atuais = carregarMsgs();
+  let count = 0;
+  let ignorados = 0;
+
+  arr.forEach((m, i) => {
+    if (!m || typeof m !== 'object'){ ignorados++; return; }
+    if (!m.titulo || typeof m.titulo !== 'string'){ ignorados++; console.warn('[Import] mensagem', i, 'sem título:', m); return; }
+    const corpo = (m.corpo !== undefined && m.corpo !== null) ? String(m.corpo) : '';
+    atuais.push({ titulo: m.titulo, corpo });
+    count++;
+  });
+
+  salvarMsgs(atuais);
+  renderizarMensagens();
+  console.log('[Import] Mensagens importadas:', count, '| Ignoradas:', ignorados);
+  return { count, ignorados };
+}
+
+/* ---------- Detectar tipo de array ---------- */
+function detectarTipoArray(arr){
+  if (!Array.isArray(arr) || arr.length === 0) return 'vazio';
+  // Procura o primeiro objeto válido
+  for (const item of arr){
+    if (!item || typeof item !== 'object') continue;
+    if ('nome' in item && 'tipo' in item) return 'atalhos';
+    if ('titulo' in item) return 'mensagens';
+  }
+  return 'desconhecido';
+}
+
+/* ---------- Ler arquivo (com fallback pra BOM) ---------- */
+function lerArquivoJSON(file){
+  return new Promise((resolve, reject) => {
+    const leitor = new FileReader();
+    leitor.onload = e => {
+      let texto = e.target.result;
+      // Remove BOM se existir
+      if (texto.charCodeAt(0) === 0xFEFF) texto = texto.slice(1);
+      try {
+        const dados = JSON.parse(texto);
+        resolve(dados);
+      } catch(err){
+        console.error('[Import] Erro ao fazer parse:', err, '\nTexto (primeiros 200 chars):', texto.slice(0, 200));
+        reject(new Error('JSON inválido. Verifique se o arquivo é realmente um JSON.'));
+      }
+    };
+    leitor.onerror = () => reject(new Error('Erro ao ler o arquivo.'));
+    leitor.readAsText(file);
+  });
+}
+
+/* ---------- Importação UNIFICADA (aceita os 3 formatos) ---------- */
+async function processarImportacao(file, modoForcado){
+  // modoForcado: null (auto), 'atalhos' ou 'mensagens'
+  const dados = await lerArquivoJSON(file);
+  const resumo = [];
+
+  // ============ CASO 1: ARRAY PURO ============
+  if (Array.isArray(dados)){
+    const tipo = modoForcado || detectarTipoArray(dados);
+    console.log('[Import] Array puro detectado, tipo:', tipo);
+
+    if (tipo === 'atalhos'){
+      const r = importarAtalhosParaBase(dados);
+      resumo.push(`${r.count} atalho(s)${r.ignorados ? ` (${r.ignorados} ignorados)` : ''}`);
+    } else if (tipo === 'mensagens'){
+      const r = importarMensagensParaBase(dados);
+      resumo.push(`${r.count} mensagem(ns)${r.ignorados ? ` (${r.ignorados} ignoradas)` : ''}`);
+    } else if (tipo === 'vazio'){
+      throw new Error('Arquivo vazio.');
+    } else {
+      throw new Error('Formato desconhecido. Nem atalho nem mensagem.');
+    }
+  }
+  // ============ CASO 2: PACOTE UNIFICADO ============
+  else if (dados && typeof dados === 'object'){
+    console.log('[Import] Pacote unificado detectado');
+    if (Array.isArray(dados.atalhos)){
+      const r = importarAtalhosParaBase(dados.atalhos);
+      resumo.push(`${r.count} atalho(s)`);
+    }
+    if (Array.isArray(dados.mensagens)){
+      const r = importarMensagensParaBase(dados.mensagens);
+      resumo.push(`${r.count} mensagem(ns)`);
+    }
+    if (dados.campos){
+      localStorage.setItem(KEY_CAMPOS, JSON.stringify(dados.campos));
+      carregarCampos();
+      atualizarPreviews();
+    }
+    if (typeof dados.sticky === 'string'){
+      localStorage.setItem(KEY_STICKY, dados.sticky);
+      const ta = document.getElementById('stickyNoteText');
+      if (ta) ta.value = dados.sticky;
+    }
+    if (dados.tema){
+      html.setAttribute('data-theme', dados.tema);
+      themeToggle.textContent = dados.tema === 'dark' ? '☀️' : '🌓';
+      localStorage.setItem('facilitador_tema', dados.tema);
+    }
+    if (resumo.length === 0){
+      throw new Error('O arquivo não contém atalhos, mensagens ou dados reconhecíveis.');
+    }
+  }
+  // ============ FORMATO DESCONHECIDO ============
+  else {
+    throw new Error('Formato não reconhecido.');
+  }
+
+  return resumo.join(', ');
+}
+
+/* ---------- Handler genérico de importação ---------- */
+function configurarImportacao(btnId, inputId, modoForcado){
+  const btn = document.getElementById(btnId);
+  const input = document.getElementById(inputId);
+
+  btn.addEventListener('click', () => input.click());
+
+  input.addEventListener('change', async ev => {
+    const arquivo = ev.target.files[0];
+    if (!arquivo) return;
+
+    console.log('[Import] Arquivo selecionado:', arquivo.name, '| Tamanho:', arquivo.size, 'bytes');
+
+    try {
+      const resumo = await processarImportacao(arquivo, modoForcado);
+      mostrarToast('Importado: ' + resumo);
+    } catch(err){
+      console.error('[Import] Falha:', err);
+      mostrarToast(err.message || 'Erro ao importar.', true);
+    }
+
+    ev.target.value = ''; // permite reimportar o mesmo arquivo
+  });
+}
+
+/* ---------- Conectar botões ---------- */
+configurarImportacao('btnImportarTudo', 'importarInputTudo', null);
+configurarImportacao('importarAtalhosBtn', 'importarAtalhosInput', 'atalhos');
+configurarImportacao('importarMsgsBtn', 'importarMsgsInput', 'mensagens');
+
+/* ---------- Exportar Tudo ---------- */
+document.getElementById('btnExportarTudo').addEventListener('click', () => {
+  const pacote = {
+    versao: '3.1',
+    exportadoEm: new Date().toISOString(),
+    atalhos: carregarAtalhos(),
+    mensagens: carregarMsgs(),
+    campos: JSON.parse(localStorage.getItem(KEY_CAMPOS) || '{}'),
+    sticky: localStorage.getItem(KEY_STICKY) || '',
+    tema: localStorage.getItem('facilitador_tema') || 'light'
   };
-  leitor.readAsText(arquivo);
+  baixarJSON(pacote, `facilitador_tudo_${new Date().toISOString().slice(0,10)}.json`);
+  mostrarToast(`Pacote completo exportado (${pacote.atalhos.length} atalhos + ${pacote.mensagens.length} mensagens)`);
 });
 
-/* --------- Importar só mensagens --------- */
-document.getElementById('importarMsgsBtn').addEventListener('click', () => {
-  document.getElementById('importarMsgsInput').click();
-});
-document.getElementById('importarMsgsInput').addEventListener('change', ev => {
-  const arquivo = ev.target.files[0];
-  if (!arquivo) return;
-  const leitor = new FileReader();
-  leitor.onload = e => {
-    try {
-      const dados = JSON.parse(e.target.result);
-      let arr = null;
-      if (Array.isArray(dados)) arr = dados;
-      else if (Array.isArray(dados.mensagens)) arr = dados.mensagens;
-      if (!arr) throw new Error('formato');
-      const n = importarMensagensParaBase(arr);
-      mostrarToast(`${n} mensagem(ns) importada(s)!`);
-    } catch(err){
-      mostrarToast('Erro: arquivo inválido.', true);
-    }
-    ev.target.value = '';
-  };
-  leitor.readAsText(arquivo);
+/* ---------- Exportar só atalhos (formato antigo) ---------- */
+document.getElementById('exportarAtalhosBtn').addEventListener('click', () => {
+  const lista = carregarAtalhos();
+  if (lista.length === 0){ mostrarToast('Nenhum atalho para exportar.', true); return; }
+  baixarJSON(lista, `atalhos_${new Date().toISOString().slice(0,10)}.json`);
+  mostrarToast(`${lista.length} atalho(s) exportado(s)!`);
 });
 
-/* ==================================================================
-   8. BLOCO DE NOTAS FLUTUANTE
-================================================================== */
+/* ---------- Exportar só mensagens (formato antigo) ---------- */
+document.getElementById('exportarMsgsBtn').addEventListener('click', () => {
+  const lista = carregarMsgs();
+  if (lista.length === 0){ mostrarToast('Nenhuma mensagem para exportar.', true); return; }
+  baixarJSON(lista, `mensagens_${new Date().toISOString().slice(0,10)}.json`);
+  mostrarToast(`${lista.length} mensagem(ns) exportada(s)!`);
+});
+
+/* ==========================================================
+   BLOCO DE NOTAS FLUTUANTE
+========================================================== */
 const stickyFloat = document.getElementById('stickyNoteFloat');
 const stickyHeader = document.getElementById('stickyHeader');
 const stickyNoteText = document.getElementById('stickyNoteText');
@@ -1812,7 +1761,6 @@ limparStickyBtn.addEventListener('click', () => {
   stickyNoteText.value = '';
   salvarSticky();
 });
-
 let stickyMinimizado = false;
 minimizarBtn.addEventListener('click', () => {
   stickyMinimizado = !stickyMinimizado;
@@ -1826,7 +1774,6 @@ minimizarBtn.addEventListener('click', () => {
   }
   salvarPosicaoSticky();
 });
-
 let stickyDragging = false;
 let sStartX, sStartY, sStartLeft, sStartTop, sStartRight, sStartBottom;
 function iniciarDrag(cx, cy){
@@ -1878,7 +1825,6 @@ document.addEventListener('touchmove', e => {
 }, { passive: false });
 document.addEventListener('mouseup', finalizarDrag);
 document.addEventListener('touchend', finalizarDrag);
-
 function ajustarStickyTextarea(){
   if (stickyMinimizado) return;
   const rect = stickyFloat.getBoundingClientRect();
@@ -1896,9 +1842,9 @@ if (window.ResizeObserver){
 window.addEventListener('resize', () => { if (!stickyMinimizado) ajustarStickyTextarea(); });
 setTimeout(ajustarStickyTextarea, 100);
 
-/* ==================================================================
-   9. CALCULADORA
-================================================================== */
+/* ==========================================================
+   CALCULADORA
+========================================================== */
 const calcToggleBtn = document.getElementById('calcToggleBtn');
 const calcPanel = document.getElementById('calcPanel');
 const calcHoraInicial = document.getElementById('calcHoraInicial');
@@ -1961,9 +1907,9 @@ document.querySelectorAll('.calc-row input').forEach(el => {
   el.addEventListener('keydown', e => { if (e.key === 'Enter') calcularHorario(); });
 });
 
-/* ==================================================================
-   10. CRONÔMETROS
-================================================================== */
+/* ==========================================================
+   CRONÔMETROS
+========================================================== */
 const cronometroFab = document.getElementById('cronometroFab');
 const cronometroPopupOverlay = document.getElementById('cronometroPopupOverlay');
 const cronometroNomeInput = document.getElementById('cronometroNomeInput');
@@ -2035,29 +1981,26 @@ function criarCronometro(nome, intervaloMin){
   card.className = 'cronometro-card';
   const main = document.createElement('div');
   main.className = 'cronometro-card-main';
-  const hd = document.createElement('div');
-  hd.className = 'cronometro-card-header';
   const nomeEl = document.createElement('span');
   nomeEl.className = 'cronometro-nome';
   nomeEl.textContent = nome; nomeEl.title = nome;
-  hd.appendChild(nomeEl);
+  main.appendChild(nomeEl);
   const tempo = document.createElement('div');
   tempo.className = 'cronometro-tempo';
   tempo.textContent = '00:00';
-  main.appendChild(hd); main.appendChild(tempo);
+  main.appendChild(tempo);
 
   const acoes = document.createElement('div');
   acoes.className = 'cronometro-acoes';
   const pausar = document.createElement('button');
   pausar.className = 'cronometro-pausar';
-  pausar.textContent = '⏸'; pausar.title = 'Pausar';
+  pausar.textContent = '⏸';
   pausar.addEventListener('click', () => togglePausa(id));
   const fechar = document.createElement('button');
   fechar.className = 'cronometro-fechar';
-  fechar.textContent = '✕'; fechar.title = 'Remover';
+  fechar.textContent = '✕';
   fechar.addEventListener('click', () => removerCronometro(id));
   acoes.appendChild(pausar); acoes.appendChild(fechar);
-
   card.appendChild(main); card.appendChild(acoes);
   cronometrosContainer.appendChild(card);
   c.el = card; c.tempoEl = tempo; c.pausarBtnEl = pausar;
@@ -2158,10 +2101,7 @@ function notificarCronometro(c, minutos){
   const corpo = `Já se passaram ${ts} (${minutos} min).`;
   if ('Notification' in window && Notification.permission === 'granted'){
     try {
-      new Notification(titulo, {
-        body: corpo, tag: `cronometro-${c.id}-${c.notifyCount}`,
-        requireInteraction: true, silent: false
-      });
+      new Notification(titulo, { body: corpo, tag: `cronometro-${c.id}-${c.notifyCount}` });
     } catch(e){}
   }
   mostrarToastCronometro(`${titulo} — ${corpo}`);
@@ -2184,20 +2124,21 @@ function atualizarTodosCronometros(){
 }
 setInterval(atualizarTodosCronometros, 1000);
 
-/* ==================================================================
-   11. INICIALIZAÇÃO
-================================================================== */
+/* ==========================================================
+   INICIALIZAÇÃO
+========================================================== */
 carregarPosicaoSticky();
 carregarSticky();
 carregarCampos();
 renderizarAtalhos();
 renderizarMensagens();
 atualizarPreviews();
-mostrarKanban();
-mostrarLigacao();
+atualizarCamposCondicionais();
 if (document.querySelector('input[name="atualizacao"]:checked').value === 'Sim'){
   versaoFields.classList.add('show');
 }
+
+console.log('✅ Facilitador iniciado. Atalhos:', carregarAtalhos().length, '| Mensagens:', carregarMsgs().length);
 
 })();
 </script>
